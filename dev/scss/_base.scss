@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: Cormorant Infant;
+}
+
+h1 {
+  font-size: 3.9em;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 42px;
+  color: azure;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-image: url(../images//main-background.gif);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    opacity: 40%;
+    z-index: 2;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}

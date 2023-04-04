@@ -1,0 +1,85 @@
+.overlay {
+  display: block;
+  position: fixed;
+  background: rgb(0, 0, 0);
+  opacity: 80%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 100%;
+}
+.modal {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 50%;
+  overflow-y: scroll;
+  gap: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  padding: 30px;
+  background-image: url(../images/modal.svg);
+  background-position: center;
+  background-size: 100%;
+  border-radius: 10px;
+  max-height: 400px;
+  @media (min-width: 560px) {
+    align-items: center;
+    max-height: none;
+    overflow-y: hidden;
+    top: 50%;
+    padding: 20px;
+  }
+
+  .closeBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 99;
+
+    &:hover {
+      cursor: pointer;
+      color: red;
+    }
+  }
+
+  &__btn {
+    width: 40%;
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    color: black;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-image: url(../images/header-image.gif);
+      color: white;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/enter-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 130%;
+    height: 200px;
+    width: 350px;
+    z-index: 10;
+    @media (min-width: 1024px) {
+      background-size: 75%;
+      width: 700px;
+    }
+  }
+}

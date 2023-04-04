@@ -1,0 +1,21 @@
+.info-section {
+  font-size: 28px;
+  overflow-y: auto;
+  padding: 5px;
+
+  h3 {
+    padding-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    gap: 20px;
+  }
+
+  &__item {
+    padding: 20px 0;
+  }
+}
