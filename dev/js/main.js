@@ -85,7 +85,7 @@ function createGuildRequirements() {
   const span4 = createEl(
     "span",
     null,
-    "4.Дружелюбность к товарищам по оружию."
+    "4.Дружелюбность к товарищам по оружию. "
   );
 
   p.append(

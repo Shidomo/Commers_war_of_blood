@@ -31,14 +31,15 @@ function html() {
 }
 
 function scss() {
-  return (
-    src("./dev/scss/**/*.scss")
-      /* .pipe(sourcemaps.init()) */
-      .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-      /* .pipe(sourcemaps.write()) */
-      .pipe(dest("./public/css/"))
-      .pipe(browserSync.stream())
-  );
+  return src("./dev/scss/**/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(
+      sass().on("error", sass.logError)
+      // {outputStyle: 'compressed' }
+    )
+    .pipe(sourcemaps.write())
+    .pipe(dest("./public/css/"))
+    .pipe(browserSync.stream());
 }
 
 function images() {
