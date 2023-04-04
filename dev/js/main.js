@@ -22,7 +22,6 @@ function createGuildInfo() {
   const feature5 = createEl("span", null, "5. Буст согильдейцев на арене.");
 
   featuresList.append(
-    createEl("br"),
     feature1,
     createEl("br"),
     feature2,
@@ -57,7 +56,6 @@ function createGuildInfo() {
   );
 
   eventsList.append(
-    createEl("br"),
     event1,
     createEl("br"),
     event2,
@@ -91,7 +89,6 @@ function createGuildRequirements() {
   const span4 = createEl("span", null, "4.Дружелюбность к соратникам.");
 
   p.append(
-    createEl("br"),
     span1,
     createEl("br"),
     span2,

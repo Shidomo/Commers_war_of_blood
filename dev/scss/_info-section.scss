@@ -4,7 +4,7 @@
   padding: 5px;
 
   h3 {
-    padding-bottom: 20px;
+    padding-bottom: 5px;
   }
 
   &__list {
@@ -15,7 +15,11 @@
     gap: 20px;
   }
 
+  &__text {
+    padding: 10px;
+  }
+
   &__item {
-    padding: 20px 0;
+    padding: 10px 0 20px;
   }
 }
