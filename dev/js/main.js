@@ -79,14 +79,14 @@ function createGuildRequirements() {
   const h3 = createEl("h3", null, "Требования");
   const p = createEl("p", "info-section__text");
 
-  const span1 = createEl(
+  const span1 = createEl("span", null, "1.Активность на сражениях");
+  const span2 = createEl("span", null, "2.Ношение гильдейской накидки.");
+  const span3 = createEl("span", null, "3.240+ itmlvl.");
+  const span4 = createEl(
     "span",
     null,
-    "1.Активность на сражениях PvP ветка талантов и экипировка."
+    "4.Дружелюбность к товарищам по оружию."
   );
-  const span2 = createEl("span", null, "2.Ношение гильдейской накидки.");
-  const span3 = createEl("span", null, "3.Гильдейское верховое животное.");
-  const span4 = createEl("span", null, "4.Дружелюбность к соратникам.");
 
   p.append(
     span1,
