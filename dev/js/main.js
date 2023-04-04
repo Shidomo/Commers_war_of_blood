@@ -1,4 +1,4 @@
-export const createEl = (tag, className, text) => {
+const createEl = (tag, className, text) => {
   const el = document.createElement(tag);
   if (className) el.className = className;
   if (text) el.textContent = text;
@@ -79,10 +79,14 @@ function createGuildRequirements() {
   const h3 = createEl("h3", null, "Требования");
   const p = createEl("p", "info-section__text");
 
-  const span1 = createEl("span", null, "1.Активность на сражениях");
+  const span1 = createEl("span", null, "1.Активность на сражениях.");
   const span2 = createEl("span", null, "2.Ношение гильдейской накидки.");
-  const span3 = createEl("span", null, "3.240+ itmLvL.");
-  const span4 = createEl("span", null, "4.Дружелюбность к товарищам по оружию");
+  const span3 = createEl("span", null, "3.3.240+ itmlvl.");
+  const span4 = createEl(
+    "span",
+    null,
+    "4.Дружелюбность к товарищам по оружию."
+  );
 
   p.append(
     span1,
@@ -109,7 +113,13 @@ function createGuildRequirements() {
   return infoSection;
 }
 
-export const openModal = function () {
+const openModal = function () {
+  function closeModal() {
+    document.body.removeChild(overlay);
+    document.body.removeChild(daddyModal);
+    closeBtn.removeEventListener("click", closeModal);
+    overlay.removeEventListener("click", closeModal);
+  }
   const overlay = createEl("div", "overlay");
   const daddyModal = createEl("div", "modal");
   const closeBtn = createEl("div", "closeBtn", "X");
@@ -117,23 +127,21 @@ export const openModal = function () {
   daddyModal.appendChild(closeBtn);
   overlay.addEventListener("click", closeModal);
   closeBtn.addEventListener("click", closeModal);
-  return { overlay, daddyModal, closeBtn };
+  return { overlay, daddyModal, closeBtn, closeModal };
 };
 
-function getModal() {
-  const modal = document.querySelector(".modal");
-  const overlay = document.querySelector(".overlay");
-  const closeBtn = document.querySelector(".closeBtn");
-  return { modal, overlay, closeBtn };
+function PreLoadModal() {
+  if (window.innerWidth >= 425) {
+    const { daddyModal, closeModal } = openModal();
+    const btnContinue = createEl("button", "modal__btn", "Продолжить");
+    const backgroundImage = createEl("div", "modal__img");
+    daddyModal.append(backgroundImage, btnContinue);
+    btnContinue.addEventListener("click", closeModal);
+  } else {
+  }
 }
 
-export function closeModal() {
-  const { overlay, modal, closeBtn } = getModal();
-  overlay.removeEventListener("click", closeModal);
-  closeBtn.removeEventListener("click", closeModal);
-  document.body.removeChild(overlay);
-  document.body.removeChild(modal);
-}
+PreLoadModal();
 
 /////////////////////////////////////////
 document.getElementById("aboutUsBtn").addEventListener("click", () => {
